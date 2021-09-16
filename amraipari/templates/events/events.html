@@ -1,0 +1,100 @@
+{% extends 'dashboard/bs.html' %}
+{% block title %}
+    Events
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h1>Running Events</h1>
+        </div>
+        <div class="col">
+            {% if request.user.is_superuser %}
+                <a href="{% url 'create-event' %}" class="btn btn-outline-dark btn-block">Create Event</a>
+            {% endif %}
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Gained</th>
+            <th scope="col">Deadline</th>
+            <th scope="colgroup">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            {% if event.ready_to_distribute == 'no' %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a href="{% url 'detail-event' event.pk %}"
+                       class="text-dark text-decoration-none">{{ event.title }}</a></td>
+                <td>{{ event.total }}</td>
+                <td>{{ event.gained }}</td>
+                <td>{{ event.date_created }}</td>
+                <td><a href="{% url 'detail-event' event.id %}" class="btn btn-outline-dark">Event Detail</a>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'update-event' event.pk %}" class="btn btn-outline-dark">
+                            Update
+                        </a>
+                        <a href="{% url 'delete-event' event.pk %}" class="btn btn-outline-dark">
+                            Delete
+                        </a>
+                    {% else %}
+                        <a href="{% url 'donate' event.pk %}" class="btn btn-outline-dark">
+                            Donate
+                        </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <div class="row">
+        <div class="col">
+            <h1>Ready to distribute assets</h1>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Gained</th>
+            <th scope="col">Deadline</th>
+            <th scope="colgroup">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            {% if event.ready_to_distribute == 'yes' %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a href="{% url 'detail-event' event.pk %}"
+                       class="text-dark text-decoration-none">{{ event.title }}</a></td>
+                <td>{{ event.total }}</td>
+                <td>{{ event.gained }}</td>
+                <td>{{ event.date_created }}</td>
+                <td><a href="{% url 'detail-event' event.id %}" class="btn btn-outline-dark">Event Detail</a>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'update-event' event.pk %}" class="btn btn-outline-dark">
+                            Update
+                        </a>
+                        <a href="{% url 'delete-event' event.pk %}" class="btn btn-outline-dark">
+                            Delete
+                        </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

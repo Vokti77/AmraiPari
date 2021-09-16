@@ -1,0 +1,44 @@
+#container{
+    width: 1140px;
+    margin: auto;
+}
+
+#nav{
+background-color: black;
+color: white;
+}
+
+#navbar{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: white;
+}
+
+li{
+    list-style: none;
+    margin-top: 5px;
+}
+
+#nav-link{
+padding: 12px 0 0 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#user{
+    text-align: center;
+}
+
+#details{
+    text-align: left;
+    padding: 20px;
+}
+
+img{
+    width: 150px;
+    border-radius: 50%;
+}

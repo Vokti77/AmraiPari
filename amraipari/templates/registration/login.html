@@ -1,0 +1,14 @@
+{% extends 'dashboard/starter.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Login Form
+{% endblock %}
+{% block content %}
+    <form method="post" novalidate style="margin-top: 50px">
+        {% csrf_token %}
+        {{ form|crispy }}
+{#       {% include 'bsform.html' with form=form %}#}
+        <input class="btn btn-outline-dark btn-block" type="submit" value="Login">
+    </form>
+    <p class="text-center">New Here? <a class="btn btn-outline-dark" href="{% url 'signup' %}">Join Now</a></p>
+{% endblock %}
