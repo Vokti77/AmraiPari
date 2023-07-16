@@ -1,15 +1,20 @@
-{% extends 'dashboard/starter.html' %}
 
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
+
 {% block title %}
-    Signup Form
+আমরাই পারি | Sign Up
 {% endblock %}
 {% block content %}
-    <form method="post" novalidate style="margin-top: 50px">
+<div style="width: 600px; margin: 0 auto; margin-top:150px;">
+    <h3 style="text-align: center;">Sign Up</h3>
+    <form method="post" novalidate  style="margin-top: 50px">
         {% csrf_token %}
        {{ form | crispy }}
         <input class="btn btn-outline-dark btn-block" type="submit" value="Signup">
-    </form>
+    </form><br>
     <p class="text-center">Already Member? <a class="btn btn-outline-dark" href="{% url 'login' %}">Login Now</a></p>
 
+</div>
+    
 {% endblock %}

@@ -38,12 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'widget_tweaks',
+    'crispy_bootstrap5',
     'crispy_forms',
     'events',
     'account',
 ]
 
-BOOTSTRAP4 = {
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+BOOTSTRAP5 = {
     'include_jquery': True,
 }
 
@@ -62,7 +66,7 @@ ROOT_URLCONF = 'amraipari.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,21 +78,28 @@ TEMPLATES = [
         },
     },
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 WSGI_APPLICATION = 'amraipari.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'amraipari',
+#         'USER': 'postgres',
+#         'PASSWORD': '1234',
+#         'HOST': 'localhost',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'amraipari',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}  
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

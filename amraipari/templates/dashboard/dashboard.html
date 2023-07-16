@@ -1,4 +1,4 @@
-p{% extends 'dashboard/bs.html' %}
+{% extends 'dashboard/bs.html' %}
 {% load static %}
 {% block title %}
     {{ request.user.username }}
@@ -63,7 +63,7 @@ p{% extends 'dashboard/bs.html' %}
                             </td>
                         </tr>
                     {% else %}
-{#                        <a href="{% url 'donor_profile' %}" class="btn btn-outline-dark">Become A Donor</a>#}
+                <a href="{% url 'donor_profile' %}" class="btn btn-outline-dark">Become A Donor</a>
                     {% endif %}
                     </tbody>
                 </table>

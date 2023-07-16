@@ -12,8 +12,8 @@
                         <div class="banner-info">
                             <div class="container">
                                 <div class="banner-info-bg text-left">
-                                    <p>Charity Life</p>
-                                    <h5>Charity, Faith and Hope. Help the Homeless. Charity life.</h5>
+                                    <p>Donor Life</p>
+                                    <h5>Donor, Faith and Hope. Help the Homeless. Donor life.</h5>
 {#                                    <a href="about.html" class="btn btn-primary btn-style">Read More</a>#}
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mt-lg-0 mt-sm-4 mt-3">
                 <div class="box-wrap">
-                    <h4><a href="contact.html">Requst a Quote</a></h4>
+                    <h4><a href="{% url 'contact' %}">Requst a Quote</a></h4>
                 </div>
             </div>
         </div>
@@ -107,8 +107,7 @@
 <div class="middle py-5" id="facts">
     <div class="container pt-lg-3">
         <div class="welcome-left text-center py-md-5 py-3">
-            <h3 class="title-big">Over 93% of all Donations go directly to Projects.</h3>
-            <p class="my-3">Under 7% for admin, fundraising, and salaries.</p>
+            
             <h4>Thank you for your continued Support </h4>
             <a href="{% url 'signup' %}" class="btn btn-style btn-primary mt-sm-5 mt-4"><span class="fa fa-heart mr-1"></span>
                 Become A Doner</a>
@@ -125,8 +124,7 @@
                 <div class="area-box">
                     <img src="{% static 'assets/images/donate.png' %}" alt="">
                     <h4><a href="{% url 'signup' %}" class="title-head">Give Donation.</a></h4>
-                    <p class="mb-3">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis
-                        in faucibus orci dolor sit et amet.</p>
+                    <p class="mb-3">Your compassion and generosity can truly make a difference in the lives of those less fortunate. Together, we can create a better, more compassionate world for everyone. Please consider making a donation today and become a part of our mission to bring hope and positive change to those in need.</p>
                     <a href="{% url 'signup' %}" class="btn btn-text">Become A Volunteer</a>
                 </div>
             </div>
@@ -134,17 +132,15 @@
                 <div class="area-box">
                     <img src="{% static 'assets/images/volunteer.png' %}" alt="">
                     <h4><a href="{% url 'signup' %}" class="title-head">Become a Volunteer.</a></h4>
-                    <p class="mb-3">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis
-                        in faucibus orci dolor sit et amet.</p>
-                    <a href="contact.html" class="btn btn-text">Join Now </a>
+                    <p class="mb-3">VBecoming a volunteer is a noble and selfless endeavor that benefits both you and the community you serve. It's a chance to be part of something bigger than yourself and contribute to positive change. So, if you're ready to make a difference, follow the steps mentioned above, and embark on a journey of giving back, personal growth, and meaningful connections with others. Together, we can create a better world through the power of volunteering!</p>
+                    <a href="{% url 'contact'%}" class="btn btn-text">Join Now </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5">
                 <div class="area-box">
                     <img src="{% static 'assets/images/child.png' %}" alt="" width="52px">
                     <h4><a href="#feature" class="title-head">Help the Children.</a></h4>
-                    <p class="mb-3">Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor amet ipsum primis
-                        in faucibus orci dolor sit et amet.</p>
+                    <p class="mb-3">Help the Children is a noble initiative aimed at improving the lives of underprivileged children around the world. It believes that every child deserves access to basic necessities, education, healthcare, and a safe environment to grow and thrive. By coming together as a global community, we can make a lasting impact on the lives of these young ones, helping them build a brighter and more promising future.</p>
                     <a href="{% url 'signup' %}" class="btn btn-text">Help Now </a>
                 </div>
             </div>
@@ -209,14 +205,11 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="header-section">
-                    <h3 class="title-big">Our Charity Causes </h3>
-                    <h4>If you want to work with for Save Poor charity? <a href="#url">Send your Details.</a></h4>
-                    <p class="mt-3 mb-lg-5 mb-4"> Lorem ipsum dolorus animi obcaecati vel ipsum. Vivamus a ligula
-                        quam.
-                        Ut blandit eu leo non. Duis sed dolor amet ipsum primis in faucibus orci dolor sit et amet
-                        igula quam.</p>
+                    <h3 class="title-big">Our Event Causes </h3>
+                    <h4>If you want to work with for আমরাই পারি? <a href="{% url 'signup'%} " >Send your Details.</a></h4>
+                    <p class="mt-3 mb-lg-5 mb-4"> Are you ready to be a part of the positive change? Whether you're an individual, a group, or a corporation, there are many ways to get involved with We Can Foundation. Together, let's create a world where we can all thrive!</p>
                 </div>
-                <a href="contact.html" class="btn btn-outline-primary btn-style">Contact Us</a>
+                <a href="{% url 'contact'%}" class="btn btn-outline-primary btn-style">Contact Us</a>
             </div>
             <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
                {% for event in events %}
@@ -243,7 +236,7 @@
                             <img src="{% static 'assets/images/home.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Homeless Charities.</h5>
+                            <h5>Homeless Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
 
@@ -256,7 +249,7 @@
                             <img src="{% static 'assets/images/education.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Education Charities.</h5>
+                            <h5>Education Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
                         </div>
@@ -268,7 +261,7 @@
                             <img src="{% static 'assets/images/health.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Health Charities.</h5>
+                            <h5>Health Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
                         </div>
@@ -280,7 +273,7 @@
                             <img src="{% static 'assets/images/icon1.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Animal Charities.</h5>
+                            <h5>Animal Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
 
@@ -293,7 +286,7 @@
                             <img src="{% static 'assets/images/food.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Food Charities.</h5>
+                            <h5>Food Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
 
@@ -306,7 +299,7 @@
                             <img src="{% static 'assets/images/eco.png' %}" alt="" class="img-fluid">
                         </div>
                         <div class="icon-info">
-                            <h5>Eco Charities.</h5>
+                            <h5>Eco Donor.</h5>
                             <p> Lorem ipsum dolor sit amet, dolor elit, sed eiusmod init
                                 tempor primis in init.</p>
 
